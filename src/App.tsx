@@ -40,11 +40,34 @@ function Card({ emoji, title, description }: CardProps) {
   );
 }
 
+function ConceptsGrid() {
+  return (
+    <section className="max-w-4xl mx-auto px-6 pb-20 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+      <Card
+        emoji="⚛️"
+        title="JSX"
+        description="Syntaxe qui ressemble à HTML mais qui est compilée en React.createElement()."
+      />
+      <Card
+        emoji="🧩"
+        title="Composant"
+        description="Une fonction qui retourne du JSX. La première lettre doit être en majuscule."
+      />
+      <Card
+        emoji="🛡️"
+        title="TypeScript"
+        description="On type les props avec type ou interface — jamais de any."
+      />
+    </section>
+  );
+}
+
 function App() {
   return (
     <div className="min-h-screen bg-slate-50">
       <Header />
       <Hero />
+      <ConceptsGrid />
     </div>
   );
 }
