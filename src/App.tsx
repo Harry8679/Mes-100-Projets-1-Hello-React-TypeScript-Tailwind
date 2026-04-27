@@ -1,11 +1,52 @@
-function App() {
+function Header() {
   return (
-    <div className="min-h-screen bg-blue-950 flex items-center justify-center">
-      <h1 className="text-5xl font-bold text-yellow-400">
-        Tailwind v4 fonctionne !
-      </h1>
-    </div>
-  )
+    <header className="bg-slate-900 text-white px-8 py-6 flex items-center justify-between">
+      <span className="text-xl font-bold tracking-tight">React TS</span>
+      <span className="text-slate-400 text-sm">Projet 01</span>
+    </header>
+  );
 }
 
-export default App
+function Hero() {
+  return (
+    <section className="flex flex-col items-center justify-center min-h-[60vh] gap-6 px-4 text-center">
+      <div className="inline-block bg-emerald-100 text-emerald-700 text-xs font-semibold px-3 py-1 rounded-full uppercase tracking-widest">
+        Hello React
+      </div>
+      <h1 className="text-5xl font-black text-slate-900 leading-tight max-w-xl">
+        Bienvenue dans ton premier{' '}
+        <span className="text-emerald-500">composant</span>
+      </h1>
+      <p className="text-slate-500 text-lg max-w-md">
+        JSX · Composant fonctionnel · TypeScript · Tailwind v4
+      </p>
+    </section>
+  );
+}
+
+type CardProps = {
+  emoji: string;
+  title: string;
+  description: string;
+};
+
+function Card({ emoji, title, description }: CardProps) {
+  return (
+    <div className="bg-white rounded-2xl border border-slate-200 p-6 flex flex-col gap-3 shadow-sm hover:shadow-md transition-shadow">
+      <span className="text-3xl">{emoji}</span>
+      <h2 className="font-bold text-slate-900">{title}</h2>
+      <p className="text-slate-500 text-sm leading-relaxed">{description}</p>
+    </div>
+  );
+}
+
+function App() {
+  return (
+    <div className="min-h-screen bg-slate-50">
+      <Header />
+      <Hero />
+    </div>
+  );
+}
+
+export default App;
