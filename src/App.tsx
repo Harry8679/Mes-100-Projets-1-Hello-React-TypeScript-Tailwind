@@ -248,5 +248,11 @@ function App() {
 // │  EXPORT                                                                  │
 // └──────────────────────────────────────────────────────────────────────────┘
 
-// `export default` = export pa
+// `export default` = export par défaut du module.
+// Permet de l'importer SANS accolades dans main.tsx :
+//     import App from './App';        ✅ (default export)
+// Si on avait fait `export { App }`, il faudrait écrire :
+//     import { App } from './App';    (named export, avec accolades)
+// Convention React : un fichier de composant utilise toujours `export default`
+// pour le composant principal.
 export default App;
